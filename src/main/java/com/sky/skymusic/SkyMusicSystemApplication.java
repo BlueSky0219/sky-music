@@ -1,4 +1,4 @@
-package com.sky.skymusicsystem;
+package com.sky.skymusic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

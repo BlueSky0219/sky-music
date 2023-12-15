@@ -1,4 +1,4 @@
-package com.sky.skymusicsystem;
+package com.sky.skymusic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
