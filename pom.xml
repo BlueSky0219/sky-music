@@ -25,8 +25,7 @@
         <commons.io.version>2.13.0</commons.io.version>
         <bitwalker.version>1.21</bitwalker.version>
         <kaptcha.version>2.3.3</kaptcha.version>
-        <mybatisplus.version>3.5.2</mybatisplus.version>
-        <!--        <mybatisplus.version>3.4.1</mybatisplus.version>-->
+        <mybatis.version>2.2.2</mybatis.version>
     </properties>
 
     <dependencies>
@@ -49,11 +48,11 @@
             <version>${druid.version}</version>
         </dependency>
 
-        <!-- mybatis-plus -->
+        <!-- mybatis -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatisplus.version}</version>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.version}</version>
         </dependency>
 
         <!-- redis 缓存操作 -->

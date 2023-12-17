@@ -47,16 +47,11 @@ spring:
         config:
           multi-statement-allow: true
 
-mybatis-plus:
-  mapper-locations: classpath:mappers/*.xml
-  configuration:
-    # 驼峰映射表字段
-    map-underscore-to-camel-case: true
-    auto-mapping-behavior: full
-    # 懒加载
-    lazy-loading-enabled: true
-    aggressive-lazy-loading: false
-  type-aliases-package: com.sky.system.entity #设置别名
-  global-config:
-    db-config:
-      id-type: auto
+# MyBatis配置
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.sky.skymusic.entity
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  # 加载全局的配置文件
+  configLocation: classpath:mybatis-config.xml

@@ -1,4 +1,4 @@
-package com.sky.skymusic.common.entity;
+package com.sky.skymusic.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -18,11 +18,20 @@ public class BaseEntity implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
+    /**
+     * 逻辑删除
+     */
     private int deleted;
 
+    /**
+     * 创建日期
+     */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private SimpleDateFormat createTime;
 
+    /**
+     * 修改日期
+     */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private SimpleDateFormat updateTime;
 }
