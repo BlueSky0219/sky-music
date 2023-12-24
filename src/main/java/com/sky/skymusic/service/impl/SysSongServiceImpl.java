@@ -8,6 +8,7 @@ import com.sky.skymusic.mapper.SysAlbumMapper;
 import com.sky.skymusic.mapper.SysSingerMapper;
 import com.sky.skymusic.mapper.SysSongMapper;
 import com.sky.skymusic.service.SysSongService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,9 +33,8 @@ public class SysSongServiceImpl implements SysSongService {
      */
     @Override
     public int save(SysSongAddDTO sysSongAddDTO) {
-        int result = 0;
 
-        SingerEntity singerEntity = sysSingerMapper.selectByName(sysSongAddDTO.getSingerName());
+/*        SingerEntity singerEntity = sysSingerMapper.selectByName(sysSongAddDTO.getSingerName());
         if (singerEntity != null) {
             AlbumEntity albumEntity = sysAlbumMapper.selectByName(sysSongAddDTO.getAlbumName());
             if (albumEntity != null) {
@@ -45,8 +45,10 @@ public class SysSongServiceImpl implements SysSongService {
                 songEntity.setAlbumId(albumEntity.getAlbumId());
                 result = sysSongMapper.insert(songEntity);
             }
-        }
+        }*/
+        SongEntity songEntity = new SongEntity();
+        BeanUtils.copyProperties(sysSongAddDTO,songEntity);
 
-        return result;
+        return sysSongMapper.insert(songEntity);
     }
 }

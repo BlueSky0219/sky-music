@@ -20,12 +20,19 @@ public class SysSongAddDTO {
     private String songSource;
 
     /**
+     * 歌曲地址
+     */
+    private String songUrl;
+
+    /**
      * 歌手姓名
      */
-    private String singerName;
+//    private String singerName;
+    private Long singerId;
 
     /**
      * 专辑名称
      */
-    private String albumName;
+//    private String albumName;
+    private Long albumId;
 }

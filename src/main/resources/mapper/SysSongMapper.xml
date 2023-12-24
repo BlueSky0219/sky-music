@@ -9,6 +9,7 @@
         <id property="songId" column="song_id"/>
         <result property="songName" column="song_name"/>
         <result property="songSource" column="song_source"/>
+        <result property="songUrl" column="song_url"/>
         <result property="singerId" column="singer_id"/>
         <result property="albumId" column="album_id"/>
         <result property="deleted" column="is_deleted"/>
@@ -20,6 +21,7 @@
         select song_id,
                song_name,
                song_source,
+               song_url,
                singer_id,
                album_id,
                is_deleted,
@@ -29,24 +31,30 @@
     </sql>
 
     <insert id="insert" parameterType="SongEntity">
-        insert into song(
-        <if test="songId != null and songId != 0">song_id,</if>
-        <if test="songName != null and songName != ''">song_name,</if>
-        <if test="songSource != null and songSource != ''">song_source,</if>
-        <if test="singerId != null and singerId != 0">singer_id,</if>
-        <if test="albumId != null and albumId != 0">album_id,</if>
-        <if test="deleted != null and deleted != 0">is_deleted,</if>
-        <if test="updateTime != null and updateTime != ''">update_time,</if>
-        <if test="createTime != null and createTime != ''">create_time,</if>
-        )values(
-        <if test="songId != null and songId != 0">#{songId},</if>
-        <if test="songName != null and songName != ''">#{songName},</if>
-        <if test="songSource != null and songSource != ''">#{songSource},</if>
-        <if test="singerId != null and singerId != 0">#{singerId},</if>
-        <if test="albumId != null and albumId != 0">#{albumId},</if>
-        <if test="deleted != null and deleted != 0">#{deleted},</if>
-        <if test="updateTime != null updateTime != ''">#{updateTime},</if>
-        <if test="createTime != null createTime != ''">#{createTime},</if>
-        )
+        insert into song
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="songId != null and songId != 0">song_id,</if>
+            <if test="songName != null and songName != ''">song_name,</if>
+            <if test="songSource != null and songSource != ''">song_source,</if>
+            <if test="songUrl != null and songUrl != ''">song_url,</if>
+            <if test="singerId != null and singerId != 0">singer_id,</if>
+            <if test="albumId != null and albumId != 0">album_id,</if>
+            <if test="deleted != null and deleted != 0">is_deleted,</if>
+            <if test="updateTime != null and updateTime != ''">update_time,</if>
+            <if test="createTime != null and createTime != ''">create_time,</if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="songId != null and songId != 0">#{songId},</if>
+            <if test="songName != null and songName != ''">#{songName},</if>
+            <if test="songSource != null and songSource != ''">#{songSource},</if>
+            <if test="songUrl != null and songUrl != ''">#{songUrl},</if>
+            <if test="singerId != null and singerId != 0">#{singerId},</if>
+            <if test="albumId != null and albumId != 0">#{albumId},</if>
+            <if test="deleted != null and deleted != 0">#{deleted},</if>
+            <if test="updateTime != null and updateTime != ''">#{updateTime},</if>
+            <if test="createTime != null and createTime != ''">#{createTime},</if>
+        </trim>
     </insert>
+
 </mapper>

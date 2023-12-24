@@ -4,4 +4,32 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sky.skymusic.mapper.WebSongMapper">
 
+    <resultMap id="webSongResult" type="com.sky.skymusic.domain.entity.SongEntity">
+        <id property="songId" column="song_id"/>
+        <result property="singerId" column="singer_id"/>
+        <result property="albumId" column="album_id"/>
+        <result property="songName" column="song_name"/>
+        <result property="songSource" column="song_source"/>
+        <result property="songUrl" column="song_url"/>
+        <result property="deleted" column="is_deleted"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectSong">
+        select song_id,
+               singer_id,
+               album_id,
+               song_name,
+               song_source,
+               song_url,
+               is_deleted,
+               create_time,
+               update_time
+        from song
+    </sql>
+
+    <select id="select" resultMap="webSongResult">
+        <include refid="selectSong"/>
+    </select>
 </mapper>

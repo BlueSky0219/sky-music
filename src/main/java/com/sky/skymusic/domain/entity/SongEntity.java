@@ -35,4 +35,9 @@ public class SongEntity extends BaseEntity {
      * 歌曲出处
      */
     private String songSource;
+
+    /**
+     * 歌曲地址
+     */
+    private String songUrl;
 }

@@ -46,6 +46,12 @@ spring:
       wall:
         config:
           multi-statement-allow: true
+  #单个文件限制
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 1024MB
+      max-request-size: 1024MB
 
 # MyBatis配置
 mybatis:

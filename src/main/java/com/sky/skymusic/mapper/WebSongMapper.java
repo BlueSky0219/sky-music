@@ -1,6 +1,9 @@
 package com.sky.skymusic.mapper;
 
+import com.sky.skymusic.domain.entity.SongEntity;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @author BlueSky
@@ -9,4 +12,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface WebSongMapper {
 
 
+    List<SongEntity> select();
 }

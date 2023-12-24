@@ -31,7 +31,7 @@ public class SysSongController {
     @PostMapping
     public AjaxResult query(@RequestBody SysSongAddDTO sysSongAddDTO) {
 
-        if (sysSongAddDTO.getSongName().isEmpty()) {
+/*        if (sysSongAddDTO.getSongName().isEmpty()) {
             return AjaxResult.error("歌曲名不能为空！");
         }
         if (sysSongAddDTO.getSongSource().isEmpty()) {
@@ -42,7 +42,7 @@ public class SysSongController {
         }
         if (sysSongAddDTO.getAlbumName().isEmpty()) {
             return AjaxResult.success("专辑名称不能为空！");
-        }
+        }*/
 
         int result = sysSongService.save(sysSongAddDTO);
         return AjaxResult.success(result);
