@@ -1,10 +1,11 @@
-package com.sky.skymusic.entity;
+package com.sky.skymusic.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 
 /**
  * @author BlueSky
@@ -27,11 +28,11 @@ public class BaseEntity implements Serializable {
      * 创建日期
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private SimpleDateFormat createTime;
+    private LocalDateTime createTime;
 
     /**
      * 修改日期
      */
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private SimpleDateFormat updateTime;
+    private LocalDateTime updateTime;
 }

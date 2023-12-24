@@ -23,10 +23,12 @@
         <jwt.version>0.12.3</jwt.version>
         <fastjson.version>2.0.41</fastjson.version>
         <commons.io.version>2.13.0</commons.io.version>
+        <commons-lang3>3.12.0</commons-lang3>
         <bitwalker.version>1.21</bitwalker.version>
         <kaptcha.version>2.3.3</kaptcha.version>
         <mybatis.version>2.2.2</mybatis.version>
         <pagehelper.boot.version>1.4.7</pagehelper.boot.version>
+        <aliyun-sdk-oss>3.15.1</aliyun-sdk-oss>
     </properties>
 
     <dependencies>
@@ -63,6 +65,13 @@
             <version>${pagehelper.boot.version}</version>
         </dependency>
 
+        <!-- 阿里云 OSS -->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+            <version>${aliyun-sdk-oss}</version>
+        </dependency>
+
         <!-- redis 缓存操作 -->
         <!--        <dependency>-->
         <!--            <groupId>org.springframework.boot</groupId>-->
@@ -72,6 +81,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- io常用工具类 -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
         </dependency>
 
         <!-- Token生成与解析-->
@@ -95,11 +111,10 @@
             <version>${fastjson.version}</version>
         </dependency>
 
-        <!-- io常用工具类 -->
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>${commons.io.version}</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3}</version>
         </dependency>
 
         <!-- 解析客户端操作系统、浏览器等 -->

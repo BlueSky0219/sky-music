@@ -1,4 +1,4 @@
-package com.sky.skymusic.entity;
+package com.sky.skymusic.domain.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

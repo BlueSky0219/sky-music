@@ -15,7 +15,7 @@ CREATE TABLE song (
 
 DROP TABLE IF EXISTS singer;
 CREATE TABLE singer (
-	singer_id BIGINT UNSIGNED NOT NULL COMMENT '歌手ID',
+	singer_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '歌手ID',
 	singer_name VARCHAR(30) NOT NULL DEFAULT '佚名' COMMENT '歌手姓名',
 	# singer_profile_id bigint unsigned not null comment '歌手简介ID',
 	# singer_profile_image_id bigint unsigned not null comment '歌手头像ID',
@@ -37,7 +37,7 @@ CREATE TABLE song_singer (
 
 DROP TABLE IF EXISTS album;
 CREATE TABLE album (
-	album_id BIGINT UNSIGNED NOT NULL COMMENT '专辑ID',
+	album_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '专辑ID',
 	album_name VARCHAR(30) NOT NULL DEFAULT '无' COMMENT '专辑名',
 	is_deleted TINYINT UNSIGNED NOT NULL DEFAULT 0 COMMENT '逻辑删除',
 	create_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',

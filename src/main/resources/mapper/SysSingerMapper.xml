@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.sky.skymusic.mapper.SysSingerMapper">
+
+    <resultMap id="SysSingerResult" type="SingerEntity">
+        <id property="singerId" column="singer_id"/>
+        <result property="singerName" column="singer_name"/>
+        <result property="deleted" column="is_deleted"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+    <sql id="selectSinger">
+        select singer_id, singer_name, is_deleted, create_time, update_time
+        from singer
+    </sql>
+
+    <select id="selectByName" resultType="com.sky.skymusic.domain.entity.SingerEntity">
+        <include refid="selectSinger"/>
+        where singer_name = #{singerName}
+    </select>
+</mapper>
